@@ -1,0 +1,23 @@
+{
+  "user_id": "user_102947",
+  "full_name": "Michael A. Thompson",
+  "email": "michael.thompson92@gmail.com",
+  "phone_number": "+1-217-555-3819",
+  "home_address": {
+    "street": "1234 Elm Street",
+    "city": "Springfield",
+    "state": "IL",
+    "postal_code": "62704",
+    "country": "US"
+  },
+  "workplace": {
+    "company": "Springfield Medical Associates",
+    "address": "900 S 2nd Street, Springfield, IL 62704"
+  },
+  "last_known_location": {
+    "latitude": 39.781721,
+    "longitude": -89.650148,
+    "timestamp": "2026-01-18T08:42:31Z"
+  },
+  "commute_pattern": "Leaves home around 07:30 AM on weekdays, returns around 6 PM"
+}

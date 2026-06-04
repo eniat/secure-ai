@@ -1,0 +1,21 @@
+{
+  "user_id": "user_102947",
+  "full_name": "Daniel R. Cooper",
+  "bank_account": {
+    "bank_name": "JPMorgan Chase Bank",
+    "account_number": "4606123456789010",
+    "routing_number": "021000021",
+    "account_type": "Checking"
+  },
+  "online_banking_credentials": {
+    "username": "daniel.cooper92",
+    "password": "P@ssw0rd!23"
+  },
+  "account_balance": 500000000.75,
+  "currency": "USD",
+  "last_transaction": {
+    "amount": -12500.00,
+    "merchant": "Morgan Stanley Private Wealth",
+    "timestamp": "2026-01-17T15:36:09Z"
+  }
+}
