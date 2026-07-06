@@ -24,14 +24,15 @@ This project explores two secure AI problem areas: adversarial attacks against a
 
 ```text
 .
-├── Secure AI coursework.ipynb
-├── SCC353-CW-Report.pdf
-├── SCC.353 Secure AI Coursework(1).pdf
+├── secure_ai_adversarial_ml_llm_guardrails.ipynb
+├── Report.pdf
 ├── json_folder/
 │   ├── user_info.json
 │   ├── accounts.json
 │   ├── locations.json
 │   └── guardrail_cases.json
+├── requirements.txt
+├── .gitignore
 └── README.md
 ```
 
@@ -39,7 +40,7 @@ This project explores two secure AI problem areas: adversarial attacks against a
 
 ## Report
 
-`SCC353-CW-Report.pdf` contains the written analysis. It explains the dataset, attack methodology, success rates, prompt extraction approach, file extraction approach, guardrail design and limitations.
+`Report.pdf` contains the written analysis. It explains the dataset, attack methodology, success rates, prompt extraction approach, file extraction approach, guardrail design and limitations.
 
 The notebook provides the implementation and outputs; the report explains the reasoning behind them.
 
@@ -90,19 +91,23 @@ Reported result:
 
 ## Task 2: Prompt Injection and Guardrails
 
-The second task uses a local IBM Granite model through vLLM. The notebook builds a simple LLM system with a system prompt, local LLM wrapper, file-reading tool, privacy checking prompt and guardrail classifier.
+The second task uses a local IBM Granite model through vLLM. The notebook builds a simple tool-using LLM system with a system prompt, local LLM wrapper, file-reading tool, privacy check and guardrail classifier.
 
 The system is tested against prompt injection attempts that try to reveal hidden instructions and access files in `json_folder/`.
 
 The required JSON files are:
+
 - `json_folder/user_info.json`
 - `json_folder/accounts.json`
 - `json_folder/locations.json`
 - `json_folder/guardrail_cases.json`
 
+The JSON files are synthetic and are included only so the file-access and guardrail sections can be reviewed and reproduced.
+
 The guardrail classifies inputs as `SAFE` or `UNSAFE`, then rechecks generated outputs.
 
 Reported result:
+
 - guardrail accuracy: 85%
 
 ## Setup
@@ -111,13 +116,24 @@ Create and activate a virtual environment:
 
 ```bash
 python -m venv venv
+```
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
 source venv/bin/activate
 ```
 
 Install dependencies:
 
 ```bash
-pip install numpy torch scikit-learn scikit-image transformers requests jupyter vllm
+pip install -r requirements.txt
 ```
 
 Start the local LLM server before running Task 2:
@@ -132,17 +148,31 @@ The notebook expects the LLM endpoint at `http://127.0.0.1:5001/v1/completions`.
 
 1. Ensure `json_folder/` is present at the repository root.
 2. Start the vLLM server if running Task 2.
-3. Open `Secure AI coursework.ipynb`.
+3. Open `secure_ai_adversarial_ml_llm_guardrails.ipynb`.
 4. Run the notebook cells from top to bottom.
 
 Task 1 can be run without the LLM server. Task 2 requires both the LLM server and `json_folder/`.
 
 ## Outputs
 
-The notebook prints dataset statistics, CNN accuracy, poisoning success rate, evasion success rate, prompt extraction attempts, file-access test results, guardrail classifications and guardrail accuracy.
+Notebook outputs are intentionally retained so the main experiment results can be reviewed without rerunning every cell.
+
+The notebook shows dataset statistics, CNN accuracy, poisoning success rate, evasion success rate, prompt extraction attempts, synthetic file-access test results, guardrail classifications and guardrail accuracy.
 
 ## Limitations
 
 This is a controlled secure AI experiment. Results depend on the selected model, dataset, hyperparameters, prompt wording and local LLM behaviour.
 
 The guardrail improves detection of common unsafe prompt patterns, but it is not a production-grade defence. Adaptive prompt injection techniques may still bypass it.
+
+## Dataset and safety notice
+
+This repository uses public research data and synthetic local JSON files for controlled secure AI experiments. The JSON files do not contain real personal data, real credentials, live account data or confidential information. Prompt injection and file-access tests are included only to demonstrate defensive evaluation of tool-using LLM systems in a local lab environment.
+
+## Usage Notice
+
+This repository is provided for portfolio and review purposes only.
+
+All rights are reserved. No permission is granted to copy, redistribute, submit, or reuse this work, in whole or in part, for academic coursework, assessment, or commercial purposes.
+
+Where this repository relates to university coursework, it is shared only to demonstrate my own technical work and should not be used by other students as a submission or solution.
