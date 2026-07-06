@@ -1,0 +1,8 @@
+numpy
+torch
+scikit-learn
+scikit-image
+transformers
+requests
+jupyter
+vllm
