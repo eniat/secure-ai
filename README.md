@@ -25,7 +25,7 @@ This project explores two secure AI problem areas: adversarial attacks against a
 ```text
 .
 ├── secure_ai_adversarial_ml_llm_guardrails.ipynb
-├── Report.pdf
+├── adversarial-attacks-cnn-and-llm-guardrails.pdf
 ├── json_folder/
 │   ├── user_info.json
 │   ├── accounts.json
@@ -40,7 +40,7 @@ This project explores two secure AI problem areas: adversarial attacks against a
 
 ## Report
 
-`Report.pdf` contains the written analysis. It explains the dataset, attack methodology, success rates, prompt extraction approach, file extraction approach, guardrail design and limitations.
+`adversarial-attacks-cnn-and-llm-guardrails.pdf` contains the written analysis. It explains the dataset, attack methodology, success rates, prompt extraction approach, file extraction approach, guardrail design and limitations.
 
 The notebook provides the implementation and outputs; the report explains the reasoning behind them.
 
